@@ -1,0 +1,113 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta name="keywords" content="Chess, Engine, Javascript, Play Chess, Chess Program, Javascript Chess, Game">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>JSChess</title>
+		<link href="styles.css" rel="stylesheet" type="text/css">
+		<script type="text/javascript"> if (!window.console) console = {log: function() {}}; </script>
+	</head>
+	<body>
+		<div class="app-shell">
+			<header class="app-header card">
+				<h1>JSChess 2.1</h1>
+				<div id="EngineThinking" class="status-chip idle">Idle</div>
+				<span id="LoadingBook">Loading book, please wait...</span>
+			</header>
+
+			<main class="app-grid">
+				<section class="board-pane">
+					<div class="board-eval">
+						<div id="EvalBar" aria-label="Evaluation bar"><div id="EvalBarFill"></div></div>
+						<div id="Board"></div>
+					</div>
+					<div id="CurrentFenDiv" class="card">
+						<label for="fenIn">FEN</label>
+						<div id="FenInDiv">
+							<input type="text" id="fenIn" />
+							<button type="button" id="SetFen">Set Position</button>
+						</div>
+						<span id="currentFenSpan"></span>
+					</div>
+				</section>
+
+				<aside class="side-pane">
+					<section class="card">
+						<h2>Engine Controls</h2>
+						<div class="control-grid">
+							<label for="GameModeChoice">Game Mode</label>
+							<select id="GameModeChoice">
+								<option value="human_white">Human as White</option>
+								<option value="human_black">Human as Black</option>
+								<option value="human_vs_human">Human vs Human</option>
+								<option value="engine_vs_engine">Engine vs Engine</option>
+							</select>
+
+							<label for="AnalysisSideChoice">Hint Side</label>
+							<select id="AnalysisSideChoice">
+								<option value="white">White</option>
+								<option value="black">Black</option>
+							</select>
+
+							<label for="SkillChoice">Strength</label>
+							<select id="SkillChoice">
+								<option value="1">1 - Beginner</option>
+								<option value="2">2 - Novice</option>
+								<option value="3">3 - Casual</option>
+								<option value="4">4 - Intermediate</option>
+								<option value="5">5 - Club</option>
+								<option value="6">6 - Advanced</option>
+								<option value="7">7 - Expert</option>
+								<option value="8">8 - Master</option>
+								<option value="9">9 - Ultimate (4s)</option>
+							</select>
+
+							<label for="ThinkTimeChoice">Time Cap</label>
+							<select id="ThinkTimeChoice">
+								<option value="auto">Auto</option>
+								<option value="250">250ms</option>
+								<option value="500">500ms</option>
+								<option value="1000">1s</option>
+								<option value="2000">2s</option>
+								<option value="4000">4s</option>
+								<option value="6000">6s</option>
+								<option value="8000">8s</option>
+								<option value="10000">10s</option>
+							</select>
+						</div>
+
+						<div class="button-row">
+							<button type="button" id="SearchButton">Move Now</button>
+							<button type="button" id="NewGameButton">New Game</button>
+							<button type="button" id="FlipButton">Flip Board</button>
+							<button type="button" id="TakeButton">Take Back</button>
+							<button type="button" id="HintToggleButton">Hints: On</button>
+						</div>
+						<div id="GameStatus"></div>
+					</section>
+
+					<section class="card">
+						<h2>Analysis</h2>
+						<div class="analysis-layout">
+							<div class="analysis-main">
+								<div id="EvalScoreOut">+0.00</div>
+								<div id="BestOut">BestMove:</div>
+								<div id="DepthOut">Depth:</div>
+								<div id="ScoreOut">Score:</div>
+								<div id="NodesOut">Nodes:</div>
+								<div id="TimeOut">Time:</div>
+								<div id="PvLineOut">PV:</div>
+							</div>
+						</div>
+						<div id="TopMovesList"></div>
+					</section>
+				</aside>
+			</main>
+			<div id="FenOutput" style="display:none;"></div>
+		</div>
+
+		<script src="js/jquery-1.10.1.min.js"></script>
+		<script src="js/all.js"></script>
+	</body>
+</html>

@@ -1,0 +1,11 @@
+{
+  "name": "jschess-engine",
+  "version": "1.0.0",
+  "description": "Browser-based JavaScript chess engine and UI.",
+  "private": false,
+  "type": "commonjs",
+  "scripts": {
+    "test": "node scripts/regression.js"
+  },
+  "license": "MIT"
+}

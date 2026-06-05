@@ -1,0 +1,25 @@
+# Backup and scratch engine bundles
+js/all copy_*.js
+js/working.js
+testscripts/
+scripts/*temp*.js
+scripts/_position-fuzzer-beforeopt.js
+
+# Generated/dependency files
+node_modules/
+*.log
+*.csv
+*.pgn
+*.pid
+
+# Python caches
+__pycache__/
+*.py[cod]
+
+# Editor settings
+.vscode/
+.idea/
+
+# OS files
+Thumbs.db
+.DS_Store
